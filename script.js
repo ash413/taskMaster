@@ -6,11 +6,12 @@ let todoList = document.querySelector(".todo-list");
 
 function updateDisplay(){
     todoList.innerHTML = '';
+    const listContainer = document.querySelector('.list');
     if(todos.length === 0){
-        todos.classList.add('empty');
+        listContainer.classList.add('empty');
     }
     else {
-        todos.classList.remove('empty');
+        listContainer.classList.remove('empty');
     }
     for(let i=0; i<todos.length; i++){
         let todoItem = document.createElement('div');
