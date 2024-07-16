@@ -6,13 +6,19 @@ let todoList = document.querySelector(".todo-list");
 
 function updateDisplay(){
     todoList.innerHTML = '';
+    if(todos.length === 0){
+        todos.classList.add('empty');
+    }
+    else {
+        todos.classList.remove('empty');
+    }
     for(let i=0; i<todos.length; i++){
         let todoItem = document.createElement('div');
         todoItem.className = 'todo-item';
         todoItem.innerHTML = `
             <span>${todos[i]}</span>
-            <button onClick="{editTodo(${i})}">Edit</button>
-            <button onClick="{deleteTodo(${i})}">Delete</button>
+            <button onClick="editTodo(${i})">Edit</button>
+            <button onClick="deleteTodo(${i})">Delete</button>
         `;
         todoList.appendChild(todoItem);
     }
@@ -29,9 +35,9 @@ function loadTodos(){
     }
 }
 
-function addTodo(text){
+function addTodo(){
     /*newTodo.innerText = text.push();*/
-    text = newTodo.value.trim();
+    let text = newTodo.value.trim();
     if(text){
         todos.push(text);
         newTodo.value = '';
@@ -42,8 +48,11 @@ function addTodo(text){
 
 function editTodo(index, newText){
     newText = prompt("Edit your todo: " + todos[index]);
-    updateDisplay();
-    saveTodos();
+    if (newText !== null && newText.trim() !== '') {
+        todos[index] = newText.trim();
+        updateDisplay();
+        saveTodos();
+    }
 }
 
 function deleteTodo(index){

@@ -1,6 +1,6 @@
 body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 50px;
+    margin: 20px;
     /*background: url("image.jpeg") no-repeat;
     background-size: cover;*/
 }
@@ -9,5 +9,83 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.heading h1{
+    font-size: 40px;
+    border: 10px double black;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.input{
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+.button{
+    margin-left: 100px;
+}
+
+#new-todo{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.list{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.todo-list{
+    padding: 20px;
+}
+
+.todo-list
+
+.todo-item{
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.todo-item span{
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.todo-item button {
+    font-size: 20px;
+    padding: 5px 10px;
+    /*border: none;*/
+    border-radius: 3px;
+    cursor: pointer;
 }
 
